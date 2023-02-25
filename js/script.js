@@ -3,9 +3,21 @@ loadCountry = () => {
     fetch("https://restcountries.com/v3.1/all")
         .then((res) => res.json())
         .then((data) => {
-            displayCountry(data);
+            displayCountry(data.slice(0, 6));
         });
 };
+// show all country 
+showMoreData = () => {
+    fetch("https://restcountries.com/v3.1/all")
+        .then((res) => res.json())
+        .then((data) => {
+            displayCountry(data);
+        });
+    let showMoreData = document.getElementById("showMoreData");
+    let showLessData = document.getElementById('showLessData')
+    showMoreData.style.display = 'none'
+    showLessData.removeAttribute('style')
+}
 
 // display all country in web page
 displayCountry = (countries) => {
@@ -36,7 +48,7 @@ displayCountry = (countries) => {
         `;
         mainContainer.appendChild(countryCard);
     });
-    
+
 };
 
 // call loadCountry function
@@ -55,7 +67,7 @@ displayCountryDetail = (detail) => {
     let modalBox = document.getElementById('modalBox')
     modalBox.innerHTML = ''; // clear previous content
     let modalDiv = document.createElement('div')
-    let {name, flags, cca2, capital, region, area, maps, population, continents} = detail
+    let { name, flags, cca2, capital, region, area, maps, population, continents } = detail
     modalDiv.innerHTML = `
         <h1 class="text-2xl font-bold my-2">Name:- ${name.common}</h1>
         <img class="w-72" src="${flags.png}" alt="">
