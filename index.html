@@ -13,10 +13,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1 class="font-medium text-center my-2 text-3xl">All Countries are here</h1>
-    <section class="container mx-auto">
-      <div id="mainContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        
+    <h1 class="font-medium text-center my-2 text-3xl">
+      All Countries are here
+    </h1>
+    <section id="mainSection" class="container mx-auto">
+      <div
+        id="mainContainer"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+      ></div>
+      <div id="modal">
+        <!-- Put this part before </body> tag -->
+        <input type="checkbox" id="my-modal" class="modal-toggle" />
+        <div class="modal ">
+          <div id="modalBox" class="modal-box">
+            
+          </div>
+        </div>
       </div>
     </section>
     <script src="./js/script.js"></script>
