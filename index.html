@@ -16,6 +16,20 @@
     <h1 class="font-medium text-center my-2 text-3xl">
       All Countries are here
     </h1>
+    <div class="mx-16">
+      <select
+        class="px-8 py-2 outline-none bg-slate-200 text-xl"
+        name="cars"
+        id="select"
+      >
+        <option value="allCountry">--All Country--</option>
+        <option class="countryOption" value="asia">Asia</option>
+        <option class="countryOption" value="americas">Americas</option>
+        <option class="countryOption" value="europe">Europe</option>
+        <option class="countryOption" value="africa">Africa</option>
+        <option class="countryOption" value="oceania">Oceania</option>
+      </select>
+    </div>
     <section id="mainSection" class="container mx-auto">
       <div
         id="mainContainer"
@@ -24,13 +38,18 @@
       <div id="modal">
         <!-- Put this part before </body> tag -->
         <input type="checkbox" id="my-modal" class="modal-toggle" />
-        <div class="modal ">
-          <div id="modalBox" class="modal-box">
-          </div>
+        <div class="modal">
+          <div id="modalBox" class="modal-box"></div>
         </div>
       </div>
       <div class="text-end lg:px-12 my-3">
-        <button id="showMoreData" onclick="showMoreData()" class="btn btn-active btn-primary">Show more</button>
+        <button
+          id="showMoreData"
+          onclick="showMoreData()"
+          class="btn btn-active btn-primary"
+        >
+          Show more
+        </button>
       </div>
     </section>
 
